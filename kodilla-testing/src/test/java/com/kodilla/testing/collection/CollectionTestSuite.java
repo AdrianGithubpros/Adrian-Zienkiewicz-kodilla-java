@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
+
 @DisplayName("Collections Tests")
 public class CollectionTestSuite {
     @BeforeEach
@@ -37,34 +39,37 @@ public class CollectionTestSuite {
         Assertions.assertTrue(result);
     }
 
+
+
     @DisplayName("When list is not empty")
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
         List<Integer> bigList = new ArrayList<>();
+        List<Integer> checkList = new ArrayList<>();
         OddNumbersExterminator ext = new OddNumbersExterminator();
-        Random theGenerator = new Random();
-        for (int n = 0; n < 50; n++) {
-            int rand = theGenerator.nextInt(200);
-            bigList.add(rand);
-        }
-        //When
-        List<Integer> nextList = new ArrayList<>();
-        nextList = ext.exterminate(bigList);
-        int result = 0;
-        for (Integer x: nextList) {
-            if(x%2 != 0){
-                result++;
+
+        for (int n = 1; n < 11; n++) {
+            bigList.add(n);
             }
-        }
+
+        checkList.add(2);
+        checkList.add(4);
+        checkList.add(6);
+        checkList.add(8);
+        checkList.add(10);
+
+        //When
+        List<Integer> evenList = new ArrayList<>();
+        evenList = ext.exterminate(bigList);
+
         System.out.println("Testing if odd number extermination was succesful");
         //Then
-        boolean answer = false;
-        if(result == 0){
 
-           answer = true;
-        }
-        Assertions.assertTrue(answer);
+
+        Assertions.assertEquals(checkList,evenList);
+
+
 
 
 
