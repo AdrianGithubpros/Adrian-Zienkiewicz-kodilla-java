@@ -31,10 +31,8 @@ public class ShapeCollectorTestSuite {
         @Test
         void testAddFigure() {
             //Given
-            List<Shape> tryList = new ArrayList<Shape>();
             Shape circle = new Circle();
-            // tryList.add(circle);
-            ShapeCollector collector = new ShapeCollector(tryList);
+            ShapeCollector collector = new ShapeCollector();
 
             //When
             collector.addFigure(circle);
@@ -47,21 +45,22 @@ public class ShapeCollectorTestSuite {
         @Test
         void testRemoveFigure() {
             //Given
-            List<Shape> tryList = new ArrayList<Shape>();
+
             List<Shape> compareList = new ArrayList<Shape>();
             Shape circle = new Circle();
             Shape triangle = new Triangle();
             Shape square = new Square();
-            tryList.add(circle);
-            tryList.add(triangle);
-            tryList.add(square);
 
             compareList.add(circle);
             compareList.add(square);
 
-            ShapeCollector collector = new ShapeCollector(tryList);
+            ShapeCollector collector = new ShapeCollector();
+            collector.addFigure(circle);
+            collector.addFigure(triangle);
+            collector.addFigure(square);
             //When
             collector.removeFigure(triangle);
+
             //Then
             Assertions.assertEquals(compareList, collector.list);
         }
@@ -69,20 +68,17 @@ public class ShapeCollectorTestSuite {
         @Test
         void testGetFigure() {
             //Given
-            List<Shape> tryList = new ArrayList<Shape>();
             Shape circle = new Circle();
             Shape triangle = new Triangle();
             Shape square = new Square();
-            tryList.add(circle);
-            tryList.add(triangle);
-            tryList.add(square);
-            ShapeCollector collector = new ShapeCollector(tryList);
+            ShapeCollector collector = new ShapeCollector();
+            collector.addFigure(circle);
+            collector.addFigure(triangle);
+            collector.addFigure(square);
             //When
-
             Shape check = collector.getFigure(1);
-
             //Then
-            Assertions.assertEquals(tryList.get(1), check);
+            Assertions.assertEquals(triangle, check);
         }
     }
 
@@ -92,20 +88,17 @@ public class ShapeCollectorTestSuite {
     @DisplayName("Figure showing tests: ")
     class TestShowFigure {
         @Test
-        void testRemovePost() {
+        void testShowFigures() {
             //Given
-            List<Shape> tryList = new ArrayList<Shape>();
             Shape circle = new Circle();
             Shape triangle = new Triangle();
             Shape square = new Square();
-            tryList.add(circle);
-            tryList.add(triangle);
-            tryList.add(square);
-            ShapeCollector collector = new ShapeCollector(tryList);
+            ShapeCollector collector = new ShapeCollector();
+            collector.addFigure(circle);
+            collector.addFigure(triangle);
+            collector.addFigure(square);
             //When
-
             String check = collector.showFigures();
-
             //Then
             Assertions.assertEquals("Circle Triangle Square ", check);
         }
