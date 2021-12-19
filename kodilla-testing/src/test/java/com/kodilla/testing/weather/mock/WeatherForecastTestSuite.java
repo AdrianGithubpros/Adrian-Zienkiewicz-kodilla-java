@@ -40,7 +40,6 @@ class WeatherForecastTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
-
     @Test
     void testCalculateForecastWithMock(){
         //Given
