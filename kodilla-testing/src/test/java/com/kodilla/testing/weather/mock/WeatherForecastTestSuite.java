@@ -59,13 +59,8 @@ class WeatherForecastTestSuite {
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         //When
         double averageTemp = weatherForecast.average();
-        double expected = 0;
-        for (Map.Entry<String, Double> entry :temperaturesMap.entrySet()) {
-            expected +=  entry.getValue();
-        }
-        expected = expected/temperaturesMap.size();
         //Then
-        Assertions.assertEquals(expected,averageTemp);
+        Assertions.assertEquals(25.56,averageTemp);
     }
 
     @Test
