@@ -5,7 +5,7 @@ public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
         if (b == 0) {
-            throw new ArithmeticException("Its impossible to divide by zero");
+            throw new ArithmeticException("Impossible to divide something by zero");
         }
         return a / b;
     }
@@ -20,9 +20,9 @@ public class FirstChallenge {
             double result = firstChallenge.divide(3, 0);
             System.out.println(result);
         } catch (ArithmeticException e) {
-            System.out.println("Error: " + e);
+            System.out.println("Forbidden action, error: " + e);
         } finally {
-            System.out.println("Finished");
+            System.out.println("Processing finished");
         }
     }
 
