@@ -25,6 +25,7 @@ public class FileReaderTestSuite {
         // given
         FileReader fileReader = new FileReader();
         // when & then
+        System.out.println(FileReaderException.class);
         assertAll(
                 () -> assertThrows(FileReaderException.class, () -> fileReader.readFile("nie_ma_takiego_pliku.txt")),
                 () -> assertThrows(FileReaderException.class, () -> fileReader.readFile(null)),

@@ -1,11 +1,10 @@
 package com.kodilla.exception.test;
 
-public class ExceptionHandling {
-    public static void secondChallengeExceptionHandler(double a, double b) {
+public class ExceptionHandling{
+    public static void secondChallengeExceptionHandler(double x, double y) {
         SecondChallenge secondChallenge = new SecondChallenge();
-
         try {
-            secondChallenge.probablyIWillThrowException(a, b);
+            secondChallenge.probablyIWillThrowException(x, y);
         } catch (Exception e) {
             System.out.println(e);
         } finally {
@@ -14,7 +13,7 @@ public class ExceptionHandling {
     }
 
     public static void main(String[] args) {
-        secondChallengeExceptionHandler(1, 1.6);
+        secondChallengeExceptionHandler(1.2, 7.5);
     }
 
 }
