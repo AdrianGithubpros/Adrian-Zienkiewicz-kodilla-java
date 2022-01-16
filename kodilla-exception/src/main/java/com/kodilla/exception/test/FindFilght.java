@@ -23,7 +23,7 @@ public class FindFilght {
 
     public static void main(String[] args) {
 
-    Flight flight = new Flight("airport2","airport4");
+    Flight flight = new Flight("airport2","airport3");
     FindFilght flightFind = new FindFilght();
         Boolean result = false;
         try {
