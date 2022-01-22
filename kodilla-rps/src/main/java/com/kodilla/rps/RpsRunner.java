@@ -1,6 +1,6 @@
 package com.kodilla.rps;
 
-import java.util.InputMismatchException;
+
 
 
 public class RpsRunner {

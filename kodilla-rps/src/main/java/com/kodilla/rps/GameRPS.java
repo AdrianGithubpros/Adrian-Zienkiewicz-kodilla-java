@@ -51,14 +51,24 @@ public class GameRPS {
 
     }
     public void menu(){
-
+        boolean menuLoop= false;
         System.out.println("Welcome to rock-paper-scissors GAME");
         System.out.println("Please write your name:");
         Scanner sName = new Scanner(System.in);
         playerName = sName.next();
-        System.out.println("Please write how many points do you need to win the game:");
-        Scanner sRounds = new Scanner(System.in);
-        roundsNumber = sRounds.nextInt();
+        AllScanner pointScanner = new AllScanner();
+        while(!menuLoop){
+            System.out.println("Please write how many points do you need to win the game:");
+            try
+            {
+                roundsNumber = pointScanner.pointsAnswer();
+                menuLoop = true;
+            }
+            catch(java.util.InputMismatchException e)
+            {
+                System.out.println("Your answer isn't a number");
+            }
+        }
         System.out.println("Please chose lvl of bot player from 1 to 3");
         System.out.println("1 - easy");
         System.out.println("2 - medium");

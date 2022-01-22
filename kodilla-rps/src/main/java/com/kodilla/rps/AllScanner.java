@@ -5,6 +5,17 @@ import java.util.Scanner;
 
 public class AllScanner {
 
+    public int pointsAnswer() throws InputMismatchException{
+        Scanner s = new Scanner(System.in);
+        int answer;
+        answer =  s.nextInt();
+        if(0 < answer && answer < Integer.MAX_VALUE){
+            return answer;
+        }else{
+            throw new InputMismatchException("Your answer isn't a number");
+        }
+    }
+
 
 
     public int botAnswer() throws InputMismatchException {
