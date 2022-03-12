@@ -1,6 +1,7 @@
-package com.kodilla.spring.forum;
+package com.example.kodillaspring;
 
 
+import com.kodilla.spring.forum.ForumUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
