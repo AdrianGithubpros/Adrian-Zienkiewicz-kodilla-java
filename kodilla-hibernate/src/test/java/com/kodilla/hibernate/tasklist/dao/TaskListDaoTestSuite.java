@@ -36,7 +36,7 @@ public class TaskListDaoTestSuite {
         assertEquals(1, readTasksList.size());
 
         //CleanUp
-       // int id = readTasksList.get(0).getId();
-        //taskListDao.deleteById(id);
+        int id = readTasksList.get(0).getId();
+        taskListDao.deleteById(id);
     }
 }
