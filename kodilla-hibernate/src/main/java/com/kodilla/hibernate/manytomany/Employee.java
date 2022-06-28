@@ -1,15 +1,27 @@
 package com.kodilla.hibernate.manytomany;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@NamedQuery(
-        name = "Employee.retrieveEmployeeWhoseNameIs",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
-)
+
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.findByLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Employee.proposedLastname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Employee.fragment",
+                query = "FROM Employee WHERE lastname LIKE CONCAT('%',:LASTNAME,'%')"
+        )
+})
 
 @Entity
 @Table(name = "EMPLOYEES")

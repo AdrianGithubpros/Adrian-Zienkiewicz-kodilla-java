@@ -4,7 +4,7 @@ package com.kodilla.hibernate.tasklist;
 import com.kodilla.hibernate.task.Task;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import com.sun.istack.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
